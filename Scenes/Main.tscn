@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dmi3g3vg775of"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c1w88"]
+font_size = 64
+font_color = Color(0, 1, 0.83137256, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r150o"]
+font_size = 32
+font_color = Color(0, 1, 0.83137256, 1)
+
+[node name="Control" type="Control" unique_id=1347978569]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1363314097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=771712403]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Center/VBox" unique_id=2041063220]
+layout_mode = 2
+text = "Jeoprodised"
+label_settings = SubResource("LabelSettings_c1w88")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/VBox" unique_id=1685757029]
+layout_mode = 2
+alignment = 1
+
+[node name="Collumn" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1090525586]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Collumn" unique_id=966629315]
+layout_mode = 2
+text = "MACBETH"
+horizontal_alignment = 1
+
+[node name="Easy" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=578545645]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Easy" unique_id=1225465305]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Easy/Center" unique_id=1135858714]
+layout_mode = 2
+text = "Easy"
+
+[node name="Medium" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=253153168]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Medium" unique_id=381695229]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Medium/Center" unique_id=570041931]
+layout_mode = 2
+text = "Medium"
+
+[node name="Hard" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=289975666]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Hard" unique_id=439704796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Hard/Center" unique_id=986029676]
+layout_mode = 2
+text = "Hard"
+
+[node name="Crazy" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=1903070]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Crazy" unique_id=982733145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Crazy/Center" unique_id=579259273]
+layout_mode = 2
+text = "Crazy"
+
+[node name="Headline" type="Label" parent="Center/VBox" unique_id=383276405]
+layout_mode = 2
+text = "Macbeth's Trials"
+label_settings = SubResource("LabelSettings_r150o")
+horizontal_alignment = 1
