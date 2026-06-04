@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dmi3g3vg775of"]
 
+[ext_resource type="Script" uid="uid://xetbu2gel4oe" path="res://Scenes/main.gd" id="1_r150o"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_c1w88"]
 font_size = 64
 font_color = Color(0, 1, 0.83137256, 1)
@@ -8,13 +10,28 @@ font_color = Color(0, 1, 0.83137256, 1)
 font_size = 32
 font_color = Color(0, 1, 0.83137256, 1)
 
-[node name="Control" type="Control" unique_id=1347978569]
+[node name="Main" type="Control" unique_id=1347978569]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r150o")
+questions = Dictionary[String, Dictionary]({
+"Banquo": {
+"Who is this guy?": "Idk..."
+},
+"Hécate": {
+"THE QUEEN OF THE WITCHES!!": "ALL HAIL!!"
+},
+"Lady MB": {
+"Who is Lady Macbeth's 'loving' husband?": "Macbeth"
+},
+"Macbeth": {
+"Who is Macbeth's 'loving' wife?": "Lady Macbeth"
+}
+})
 
 [node name="Center" type="CenterContainer" parent="." unique_id=1363314097]
 layout_mode = 1
@@ -37,19 +54,19 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Collumn" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1090525586]
+[node name="Macbeth" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1090525586]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Collumn" unique_id=966629315]
+[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Macbeth" unique_id=966629315]
 layout_mode = 2
 text = "MACBETH"
 horizontal_alignment = 1
 
-[node name="Easy" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=578545645]
-custom_minimum_size = Vector2(100, 100)
+[node name="100" type="Button" parent="Center/VBox/HBoxContainer/Macbeth" unique_id=578545645]
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Easy" unique_id=1225465305]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Macbeth/100" unique_id=1225465305]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,15 +74,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Easy/Center" unique_id=1135858714]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Macbeth/100/Center" unique_id=1135858714]
 layout_mode = 2
-text = "Easy"
+text = "100"
 
-[node name="Medium" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=253153168]
-custom_minimum_size = Vector2(100, 100)
+[node name="200" type="Button" parent="Center/VBox/HBoxContainer/Macbeth" unique_id=253153168]
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Medium" unique_id=381695229]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Macbeth/200" unique_id=381695229]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,15 +90,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Medium/Center" unique_id=570041931]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Macbeth/200/Center" unique_id=570041931]
 layout_mode = 2
-text = "Medium"
+text = "200"
 
-[node name="Hard" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=289975666]
-custom_minimum_size = Vector2(100, 100)
+[node name="300" type="Button" parent="Center/VBox/HBoxContainer/Macbeth" unique_id=289975666]
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Hard" unique_id=439704796]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Macbeth/300" unique_id=439704796]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,15 +106,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Hard/Center" unique_id=986029676]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Macbeth/300/Center" unique_id=986029676]
 layout_mode = 2
-text = "Hard"
+text = "300"
 
-[node name="Crazy" type="Button" parent="Center/VBox/HBoxContainer/Collumn" unique_id=1903070]
-custom_minimum_size = Vector2(100, 100)
+[node name="400" type="Button" parent="Center/VBox/HBoxContainer/Macbeth" unique_id=1903070]
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Collumn/Crazy" unique_id=982733145]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Macbeth/400" unique_id=982733145]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,9 +122,377 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Collumn/Crazy/Center" unique_id=579259273]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Macbeth/400/Center" unique_id=579259273]
 layout_mode = 2
-text = "Crazy"
+text = "400"
+
+[node name="500" type="Button" parent="Center/VBox/HBoxContainer/Macbeth" unique_id=257337714]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Macbeth/500" unique_id=815865393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Macbeth/500/Center" unique_id=1897903694]
+layout_mode = 2
+text = "500"
+
+[node name="Lady MB" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1286740390]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Lady MB" unique_id=910221841]
+layout_mode = 2
+text = "LADY MB"
+horizontal_alignment = 1
+
+[node name="100" type="Button" parent="Center/VBox/HBoxContainer/Lady MB" unique_id=1541594086]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Lady MB/100" unique_id=514375144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Lady MB/100/Center" unique_id=1714400241]
+layout_mode = 2
+text = "100"
+
+[node name="200" type="Button" parent="Center/VBox/HBoxContainer/Lady MB" unique_id=1849057623]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Lady MB/200" unique_id=62174524]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Lady MB/200/Center" unique_id=628865940]
+layout_mode = 2
+text = "200"
+
+[node name="300" type="Button" parent="Center/VBox/HBoxContainer/Lady MB" unique_id=1226489620]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Lady MB/300" unique_id=1138900343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Lady MB/300/Center" unique_id=1133576182]
+layout_mode = 2
+text = "300"
+
+[node name="400" type="Button" parent="Center/VBox/HBoxContainer/Lady MB" unique_id=350657069]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Lady MB/400" unique_id=154386746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Lady MB/400/Center" unique_id=1392842388]
+layout_mode = 2
+text = "400"
+
+[node name="500" type="Button" parent="Center/VBox/HBoxContainer/Lady MB" unique_id=413625889]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Lady MB/500" unique_id=965118158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Lady MB/500/Center" unique_id=1773839484]
+layout_mode = 2
+text = "500"
+
+[node name="Banquo" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=94539638]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Banquo" unique_id=2054548950]
+layout_mode = 2
+text = "BANQUO"
+horizontal_alignment = 1
+
+[node name="100" type="Button" parent="Center/VBox/HBoxContainer/Banquo" unique_id=803034786]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Banquo/100" unique_id=1197418437]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Banquo/100/Center" unique_id=717480046]
+layout_mode = 2
+text = "100"
+
+[node name="200" type="Button" parent="Center/VBox/HBoxContainer/Banquo" unique_id=1666458089]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Banquo/200" unique_id=1015866007]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Banquo/200/Center" unique_id=1829612269]
+layout_mode = 2
+text = "200"
+
+[node name="300" type="Button" parent="Center/VBox/HBoxContainer/Banquo" unique_id=2026448436]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Banquo/300" unique_id=1773715820]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Banquo/300/Center" unique_id=1344163584]
+layout_mode = 2
+text = "300"
+
+[node name="400" type="Button" parent="Center/VBox/HBoxContainer/Banquo" unique_id=360810218]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Banquo/400" unique_id=23714180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Banquo/400/Center" unique_id=523193687]
+layout_mode = 2
+text = "400"
+
+[node name="500" type="Button" parent="Center/VBox/HBoxContainer/Banquo" unique_id=1578213795]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Banquo/500" unique_id=1802195355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Banquo/500/Center" unique_id=1469135744]
+layout_mode = 2
+text = "500"
+
+[node name="Witches" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1475196806]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Witches" unique_id=703213181]
+layout_mode = 2
+text = "WITCHES"
+horizontal_alignment = 1
+
+[node name="100" type="Button" parent="Center/VBox/HBoxContainer/Witches" unique_id=799538186]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Witches/100" unique_id=502165077]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Witches/100/Center" unique_id=1829560642]
+layout_mode = 2
+text = "100"
+
+[node name="200" type="Button" parent="Center/VBox/HBoxContainer/Witches" unique_id=746917100]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Witches/200" unique_id=107215317]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Witches/200/Center" unique_id=445083613]
+layout_mode = 2
+text = "200"
+
+[node name="300" type="Button" parent="Center/VBox/HBoxContainer/Witches" unique_id=971391247]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Witches/300" unique_id=731691407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Witches/300/Center" unique_id=1597618804]
+layout_mode = 2
+text = "300"
+
+[node name="400" type="Button" parent="Center/VBox/HBoxContainer/Witches" unique_id=762371937]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Witches/400" unique_id=93391951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Witches/400/Center" unique_id=1370073122]
+layout_mode = 2
+text = "400"
+
+[node name="500" type="Button" parent="Center/VBox/HBoxContainer/Witches" unique_id=729176298]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Witches/500" unique_id=717041815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Witches/500/Center" unique_id=864910892]
+layout_mode = 2
+text = "500"
+
+[node name="Hecate" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1094075093]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1865935192]
+layout_mode = 2
+text = "HECATE"
+horizontal_alignment = 1
+
+[node name="100" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1985056159]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/100" unique_id=1906444321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/100/Center" unique_id=1865550341]
+layout_mode = 2
+text = "100"
+
+[node name="200" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1740804919]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/200" unique_id=1901838098]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/200/Center" unique_id=1759765524]
+layout_mode = 2
+text = "200"
+
+[node name="300" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1344805121]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/300" unique_id=2096180712]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/300/Center" unique_id=1749144901]
+layout_mode = 2
+text = "300"
+
+[node name="400" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1774218699]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/400" unique_id=360411757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/400/Center" unique_id=929748630]
+layout_mode = 2
+text = "400"
+
+[node name="500" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1173406040]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/500" unique_id=798687566]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/500/Center" unique_id=760069164]
+layout_mode = 2
+text = "500"
 
 [node name="Headline" type="Label" parent="Center/VBox" unique_id=383276405]
 layout_mode = 2
