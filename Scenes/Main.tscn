@@ -10,6 +10,11 @@ font_color = Color(0, 1, 0.83137256, 1)
 font_size = 32
 font_color = Color(0, 1, 0.83137256, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_idj7w"]
+font_size = 64
+font_color = Color(0.15686275, 0, 0, 1)
+outline_size = 10
+
 [node name="Main" type="Control" unique_id=1347978569]
 layout_mode = 3
 anchors_preset = 15
@@ -406,19 +411,19 @@ grow_vertical = 2
 layout_mode = 2
 text = "500"
 
-[node name="Hecate" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1094075093]
+[node name="Horizons" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1094075093]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1865935192]
+[node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Horizons" unique_id=1865935192]
 layout_mode = 2
 text = "HECATE"
 horizontal_alignment = 1
 
-[node name="100" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1985056159]
+[node name="100" type="Button" parent="Center/VBox/HBoxContainer/Horizons" unique_id=1985056159]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/100" unique_id=1906444321]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Horizons/100" unique_id=1906444321]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -426,15 +431,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/100/Center" unique_id=1865550341]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Horizons/100/Center" unique_id=1865550341]
 layout_mode = 2
 text = "100"
 
-[node name="200" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1740804919]
+[node name="200" type="Button" parent="Center/VBox/HBoxContainer/Horizons" unique_id=1740804919]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/200" unique_id=1901838098]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Horizons/200" unique_id=1901838098]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -442,15 +447,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/200/Center" unique_id=1759765524]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Horizons/200/Center" unique_id=1759765524]
 layout_mode = 2
 text = "200"
 
-[node name="300" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1344805121]
+[node name="300" type="Button" parent="Center/VBox/HBoxContainer/Horizons" unique_id=1344805121]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/300" unique_id=2096180712]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Horizons/300" unique_id=2096180712]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -458,15 +463,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/300/Center" unique_id=1749144901]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Horizons/300/Center" unique_id=1749144901]
 layout_mode = 2
 text = "300"
 
-[node name="400" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1774218699]
+[node name="400" type="Button" parent="Center/VBox/HBoxContainer/Horizons" unique_id=1774218699]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/400" unique_id=360411757]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Horizons/400" unique_id=360411757]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -474,15 +479,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/400/Center" unique_id=929748630]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Horizons/400/Center" unique_id=929748630]
 layout_mode = 2
 text = "400"
 
-[node name="500" type="Button" parent="Center/VBox/HBoxContainer/Hecate" unique_id=1173406040]
+[node name="500" type="Button" parent="Center/VBox/HBoxContainer/Horizons" unique_id=1173406040]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
 
-[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Hecate/500" unique_id=798687566]
+[node name="Center" type="CenterContainer" parent="Center/VBox/HBoxContainer/Horizons/500" unique_id=798687566]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -490,7 +495,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Hecate/500/Center" unique_id=760069164]
+[node name="Label" type="Label" parent="Center/VBox/HBoxContainer/Horizons/500/Center" unique_id=760069164]
 layout_mode = 2
 text = "500"
 
@@ -499,3 +504,30 @@ layout_mode = 2
 text = "Macbeth's Trials"
 label_settings = SubResource("LabelSettings_r150o")
 horizontal_alignment = 1
+
+[node name="Awaiting" type="ColorRect" parent="." unique_id=1283261253]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.7647059)
+
+[node name="Label" type="Label" parent="Awaiting" unique_id=2139582048]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Loading URL..."
+label_settings = SubResource("LabelSettings_idj7w")
