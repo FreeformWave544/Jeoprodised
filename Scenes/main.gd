@@ -4,7 +4,7 @@ var teams = [0, 0, 0, 0]
 @export var questions: Dictionary[String, Dictionary]
 var http_request: HTTPRequest
 var baseurl := "https://horizons.hackclub.com/api/projects/"
-var projectID := str(randi_range(0, 5000))
+var projectID := str(randi_range(0, 9000))
 var url := baseurl + projectID
 
 func _ready() -> void:
@@ -27,18 +27,25 @@ func _btn_press(score: int, btn):
 
 func find_card(type):
 	if type.to_pascal_case() == "Horizons":
-		var id = approvedIDs.pick_random() if approvedIDs.size() > 0 else ""
-		while approvedIDs.size() == 0 or id in usedIDs:
+		var id = approvedIDs.keys().pick_random() if approvedIDs.size() > 0 else ""
+		while approvedIDs.is_empty() or (id != "" and id in usedIDs):
 			$Awaiting.show()
 			print(testedIDs)
-			if approvedIDs.size() > 0: id = approvedIDs.pick_random()
+			if approvedIDs.size() > 0: id = approvedIDs.keys().pick_random()
 			if usedIDs.size() >= approvedIDs.size(): usedIDs.clear()
 			await get_tree().create_timer(0.2).timeout
-		usedIDs.append(id)
+		while id == "":
+			print("No ID!")
+			$Awaiting.show()
+			print(testedIDs)
+			if approvedIDs.size() > 0: id = approvedIDs.keys().pick_random()
+			if usedIDs.size() >= approvedIDs.size(): usedIDs.clear()
+			await get_tree().create_timer(0.2).timeout
+		if not id in usedIDs: usedIDs.append(id)
 		$Awaiting.hide()
 		print(id, " -=- ", approvedIDs)
+		print("APPROVED:\n", approvedIDs.keys(), "\n\nINVALID:\n", testedIDs.keys())
 		OS.shell_open("https://horizons.hackclub.com/projects/" + id)
-		print("APPROVED:\n", approvedIDs, "\n\nINVALID:\n", testedIDs)
 		return
 	elif not type in questions: print("NO RELATED Qs") ; return
 	var q = questions[type].keys().pick_random()
@@ -49,15 +56,16 @@ func check_url(ID := projectID) -> void:
 	if error != OK: print("Error sending request:", error)
 
 var proj := ""
-var testedIDs := []
-var approvedIDs := []
+var testedIDs := {}
+var approvedIDs := {}
 var usedIDs := []
 func _on_request_completed(_result: int, response_code: int, _headers: PackedStringArray, _body: PackedByteArray) -> void:
-	if response_code == 404: testedIDs.append(projectID)
+	if response_code == 404 and not projectID in testedIDs: testedIDs[projectID] = true
 	else:
-		approvedIDs.append(projectID)
+		if not projectID in approvedIDs: approvedIDs[projectID] = true
 		proj = "https://horizons.hackclub.com/projects/" + projectID
 	await get_tree().create_timer(0.1 + ((len(approvedIDs) - len(usedIDs)) / 50.0)).timeout
+	print()
 	projectID = str(randi_range(0, 5000))
 	url = "https://horizons.hackclub.com/api/projects/%s" % projectID
 	check_url()
