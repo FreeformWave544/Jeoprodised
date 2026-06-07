@@ -24,17 +24,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r150o")
 questions = Dictionary[String, Dictionary]({
-"Banquo": {
-"Who is this guy?": "Idk..."
+"Abortion": {
+"Up until how long is abortion legal?": "24 weeks."
 },
-"Hécate": {
-"THE QUEEN OF THE WITCHES!!": "ALL HAIL!!"
+"Euthanasia": {
+"Is it legal in the UK?": "No. It is illegal in the UK."
 },
-"Lady MB": {
-"Who is Lady Macbeth's 'loving' husband?": "Macbeth"
+"Origins & Value of the Universe": {
+"How long ago was the Big Bang?": "13.7 Billion Years Ago."
 },
-"Macbeth": {
-"Who is Macbeth's 'loving' wife?": "Lady Macbeth"
+"Sanctity of Life": {
+"Who can take life?": "God and God alone."
 }
 })
 
@@ -501,7 +501,7 @@ text = "500"
 
 [node name="Headline" type="Label" parent="Center/VBox" unique_id=383276405]
 layout_mode = 2
-text = "Macbeth's Trials"
+text = "Matters of Life and Death"
 label_settings = SubResource("LabelSettings_r150o")
 horizontal_alignment = 1
 

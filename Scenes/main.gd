@@ -24,8 +24,7 @@ func _btn_press(score: int, btn):
 	btn.disabled = true
 	var team = await find_card(btn.get_parent().name)
 	if team is Array or team != -1: teams[team[0]] += score if team[1] else score * -1
-	for t in range(len($Center/VBox/teams.get_children())):
-		$Center/VBox/teams.get_child(t).text = "TEAM %s: %d" % [t, teams[t]]
+	for t in range(len($Center/VBox/teams.get_children())): $Center/VBox/teams.get_child(t).text = "TEAM %s: %d" % [t + 1, teams[t]]
 
 func find_card(type):
 	if type.to_pascal_case() == "Horizons":
