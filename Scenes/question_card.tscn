@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://b5aw00bsiccev"]
+
+[ext_resource type="Script" uid="uid://b1s53dxvwavw0" path="res://Scenes/question_card.gd" id="1_pnkhm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pnkhm"]
+font_size = 64
+font_color = Color(0.6784314, 0.6784314, 0.8666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lonew"]
+font_size = 32
+font_color = Color(0.6392157, 0.1764706, 0, 1)
+
+[sub_resource type="Animation" id="Animation_pnkhm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lonew"]
+resource_name = "enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.2, 0.2), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.8247963, 1.8247963, 1.8247963, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_56yma"]
+resource_name = "exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.3, 0.3), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_56yma"]
+_data = {
+&"RESET": SubResource("Animation_pnkhm"),
+&"enter": SubResource("Animation_lonew"),
+&"exit": SubResource("Animation_56yma")
+}
+
+[node name="QuestionCard" type="Control" unique_id=1879176665]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pnkhm")
+
+[node name="Panel" type="Panel" parent="." unique_id=1877435616]
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 250)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=172799756]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Topic" type="Label" parent="Panel/VBoxContainer" unique_id=1228305031]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_pnkhm")
+horizontal_alignment = 1
+
+[node name="Question" type="Label" parent="Panel/VBoxContainer" unique_id=1036846165]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Answer" type="Label" parent="Panel/VBoxContainer" unique_id=1679956179]
+visible = false
+layout_mode = 2
+label_settings = SubResource("LabelSettings_lonew")
+horizontal_alignment = 1
+
+[node name="Reveal" type="Button" parent="Panel/VBoxContainer" unique_id=1016598086]
+layout_mode = 2
+text = "Reveal Answer..."
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1156036246]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Correct" type="Button" parent="Panel/VBoxContainer/Buttons" unique_id=967448374]
+layout_mode = 2
+text = "CORRECT!"
+
+[node name="Wrong" type="Button" parent="Panel/VBoxContainer/Buttons" unique_id=791431125]
+layout_mode = 2
+text = "INCORRECT!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1987229791]
+libraries/ = SubResource("AnimationLibrary_56yma")
+
+[node name="Panel2" type="Panel" parent="." unique_id=552877033]
+visible = false
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2" unique_id=860870466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel2/VBoxContainer" unique_id=1641668384]
+layout_mode = 2
+text = "Award Points To...?"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Panel2/VBoxContainer" unique_id=1774966766]
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 4
+popup/item_0/text = "Team 1"
+popup/item_0/id = 0
+popup/item_1/text = "Team 2"
+popup/item_1/id = 1
+popup/item_2/text = "Team 3"
+popup/item_2/id = 2
+popup/item_3/text = "Team 4"
+popup/item_3/id = 3
+
+[node name="Submit" type="Button" parent="Panel2/VBoxContainer" unique_id=1289464753]
+layout_mode = 2
+text = "Submit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Reveal" to="." method="_on_reveal_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Correct" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buttons/Wrong" to="." method="_on_option_pressed"]
