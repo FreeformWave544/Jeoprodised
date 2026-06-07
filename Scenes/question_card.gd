@@ -1,6 +1,6 @@
 extends Control
 
-signal team(team)
+signal team(team, correct)
 
 func enter(question, subject):
 	$Panel/VBoxContainer/Topic.text = "TOPIC: " + subject
@@ -12,10 +12,9 @@ func _on_option_pressed() -> void:
 	$AnimationPlayer.play("exit")
 	$Panel2.show()
 	await $Panel2/VBoxContainer/Submit.pressed
-	team.emit($Panel2/VBoxContainer/OptionButton.get_selected_id())
+	team.emit($Panel2/VBoxContainer/OptionButton.get_selected_id(), $Panel2/VBoxContainer/CheckBox.button_pressed)
 	queue_free()
 
 func _on_reveal_pressed() -> void:
-	$Panel/VBoxContainer/Answer.show()
-	$Panel/VBoxContainer/Buttons.show()
-	$Panel/VBoxContainer/Reveal.hide()
+	if not $Panel/VBoxContainer/Answer.visible: $Panel/VBoxContainer/Answer.show() ; $Panel/VBoxContainer/Reveal.text = "Continue..."
+	else: _on_option_pressed()

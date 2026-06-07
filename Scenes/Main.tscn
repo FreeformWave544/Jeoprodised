@@ -505,6 +505,27 @@ text = "Macbeth's Trials"
 label_settings = SubResource("LabelSettings_r150o")
 horizontal_alignment = 1
 
+[node name="teams" type="HBoxContainer" parent="Center/VBox" unique_id=402612633]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Team1" type="Label" parent="Center/VBox/teams" unique_id=1069801168]
+layout_mode = 2
+text = "TEAM 1: 0"
+
+[node name="Team2" type="Label" parent="Center/VBox/teams" unique_id=410818383]
+layout_mode = 2
+text = "TEAM 2: 0"
+
+[node name="Team3" type="Label" parent="Center/VBox/teams" unique_id=192331017]
+layout_mode = 2
+text = "TEAM 3: 0"
+
+[node name="Team4" type="Label" parent="Center/VBox/teams" unique_id=1718421100]
+layout_mode = 2
+text = "TEAM 4: 0"
+
 [node name="Awaiting" type="ColorRect" parent="." unique_id=1283261253]
 visible = false
 layout_mode = 1
