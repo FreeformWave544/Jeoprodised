@@ -2,6 +2,17 @@
 
 [ext_resource type="Script" uid="uid://xetbu2gel4oe" path="res://Scenes/main.gd" id="1_r150o"]
 
+[sub_resource type="Gradient" id="Gradient_r150o"]
+colors = PackedColorArray(0.25490198, 0.30588236, 0.25490198, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_idj7w"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r150o"]
+width = 1152
+height = 648
+noise = SubResource("FastNoiseLite_idj7w")
+color_ramp = SubResource("Gradient_r150o")
+
 [sub_resource type="LabelSettings" id="LabelSettings_c1w88"]
 font_size = 64
 font_color = Color(0, 1, 0.83137256, 1)
@@ -23,20 +34,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r150o")
-questions = Dictionary[String, Dictionary]({
-"Abortion": {
-"Up until how long is abortion legal?": "24 weeks."
-},
-"Euthanasia": {
-"Is it legal in the UK?": "No. It is illegal in the UK."
-},
-"Origins & Value of the Universe": {
-"How long ago was the Big Bang?": "13.7 Billion Years Ago."
-},
-"Sanctity of Life": {
-"Who can take life?": "God and God alone."
-}
-})
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1071219491]
+texture = SubResource("NoiseTexture2D_r150o")
+centered = false
 
 [node name="Center" type="CenterContainer" parent="." unique_id=1363314097]
 layout_mode = 1
@@ -412,6 +413,7 @@ layout_mode = 2
 text = "500"
 
 [node name="Horizons" type="VBoxContainer" parent="Center/VBox/HBoxContainer" unique_id=1094075093]
+visible = false
 layout_mode = 2
 
 [node name="Title" type="Label" parent="Center/VBox/HBoxContainer/Horizons" unique_id=1865935192]

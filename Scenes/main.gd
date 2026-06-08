@@ -1,7 +1,98 @@
 extends Control
 
 var teams = [0, 0, 0, 0]
-@export var questions: Dictionary[String, Dictionary]
+@export var questions: Dictionary[String, Dictionary] = {
+	"Abortion": {
+		"Up until how long is abortion legal in the UK?": "24 weeks.",
+		"When was abortion legalised in the UK?": "1967.",
+		"How many doctors must agree before an abortion can take place?": "Two doctors.",
+		"Does the father get a legal say in an abortion?": "No.",
+		"What does sanctity of life teach about abortion?": "Life is sacred and belongs to God.",
+		"What does Situation Ethics teach about abortion?": "Do the most loving thing.",
+		"What is a Christian argument for abortion in cases of rape?": "Situation Ethics teaches doing the most loving thing.",
+		"What is a Christian argument for abortion if the mother's life is at risk?": "It may be the lesser of two evils.",
+		"What is a Christian argument for abortion in cases of severe disability?": "Quality of life should be considered.",
+		"What is a Christian argument against abortion?": "Life begins at conception and the baby has a soul.",
+		"Why do some Christians believe abortion is murder?": "The baby has a soul from conception.",
+		"Why do some Christians oppose abortion because of marriage?": "The purpose of marriage is to have children.",
+		"What is a non-religious argument for abortion?": "Women should have the right to decide about their own body.",
+		"What is another non-religious argument for abortion?": "Illegal abortions can be dangerous.",
+		"When might abortion save lives?": "When carrying the child could result in the mother's death.",
+		"What is a non-religious argument against abortion?": "Adoption is available.",
+		"Why might some women oppose abortion after having one?": "They may regret their decision.",
+		"What social concern is sometimes raised about abortion?": "It could lead to promiscuity."
+	},
+
+	"Euthanasia": {
+		"What is euthanasia?": "The painless killing of someone dying from a painful disease.",
+		"Is euthanasia legal in the UK?": "No.",
+		"What is voluntary euthanasia?": "Ending life painlessly when the patient asks for it.",
+		"What is non-voluntary euthanasia?": "Ending someone's life when they cannot ask but are believed to want it.",
+		"What is assisted suicide?": "Providing a seriously ill person with the means to kill themselves.",
+		"What is a non-religious argument for euthanasia?": "People have the right to choose when they die.",
+		"How might euthanasia allow someone to die?": "With dignity.",
+		"What comparison do some people make between suicide and euthanasia?": "Suicide is legal, so euthanasia should be too.",
+		"Why do some people reject the 'playing God' argument?": "Modern medicine already prolongs life.",
+		"What is a non-religious argument against euthanasia?": "The patient could change their mind.",
+		"Why do many doctors oppose euthanasia?": "Doctors should save life, not end it.",
+		"What medical argument is used against euthanasia?": "A cure could be found.",
+		"What concern is raised about family influence?": "People may feel pressured by relatives.",
+		"What is a Christian argument for euthanasia?": "God would not want His creation to suffer.",
+		"What belief about God is used to support euthanasia?": "God is all-forgiving.",
+		"What is the main Christian argument against euthanasia?": "Only God should decide when life ends.",
+		"Who has said euthanasia is a sin?": "The Pope.",
+		"How is life described by some Christians?": "A test.",
+		"Which commandment is used against euthanasia?": "Thou shalt not kill."
+	},
+
+	"Origins & Value of the Universe": {
+		"What does the Big Bang Theory teach?": "A huge explosion of matter happened 13.7 billion years ago.",
+		"What does the Big Bang Theory say about matter?": "Matter is eternal.",
+		"When was the solar system formed?": "5 billion years ago.",
+		"What evidence supports the Big Bang Theory?": "Redshift effect, background radiation and ripples in deep space.",
+		"What is Creationism?": "The belief that Genesis is literally true and science is wrong.",
+		"How do Creationists explain evidence for the Big Bang?": "Noah's Flood explains it.",
+		"What is the Apparent Age Theory?": "The universe was created looking older than it is.",
+		"What is Intelligent Design?": "The complexity of the universe suggests a designer.",
+		"What example did Paley use to support design?": "A watch.",
+		"What examples are used as evidence of design?": "DNA and the human eye.",
+		"Who do Intelligent Design supporters believe the designer is?": "God.",
+		"What does the compatibility view teach?": "Science explains how and religion explains why.",
+		"Why do some people think the Big Bang supports belief in God?": "It could not have happened by chance.",
+		"Why do some believers think God is necessary for life?": "God created the laws of gravity and chemicals needed for life.",
+		"Why do most Christians believe the universe has value?": "God created it and it is a gift.",
+		"Who owns the Earth according to many Christians?": "God.",
+		"What is stewardship?": "Looking after the world on God's behalf.",
+		"What does the Old Testament teach about the land?": "It should be treated kindly.",
+		"What does the Parable of the Talents teach about the environment?": "Leave more for the next generation than we received.",
+		"Why do Christians believe they will care for the environment?": "They will be judged on how they looked after it.",
+		"What does Genesis 1 say according to some Christians?": "Humans should rule over everything.",
+		"What does evolution teach about life?": "Life evolved from single-celled organisms.",
+		"What is survival of the fittest?": "The strongest survived and evolved.",
+		"When did humans develop according to science?": "2.5 million years ago.",
+		"What do Christian Creationists believe about species?": "God created them in six days.",
+		"What does the Design Argument teach about ecosystems?": "God designed them.",
+		"Why does evolution create challenges for some Christians?": "It appears to contradict the Bible.",
+		"Why is Adam and Eve important to some Christians?": "Without them there is no Original Sin."
+	},
+
+	"Sanctity of Life": {
+		"What is sanctity of life?": "The belief that life is sacred, holy and belongs to God.",
+		"Why is human life special according to Christians?": "Humans are made in God's image and have a soul.",
+		"What does sanctity of life teach about violence?": "Human life should not be treated violently.",
+		"Who can give and take life according to sanctity of life?": "Only God.",
+		"Why do many Christians oppose abortion and euthanasia?": "Life belongs to God.",
+		"What is quality of life?": "The idea that life should have benefits to be worth living.",
+		"What does the Bible say about humanity?": "God created mankind in His own image.",
+		"Why do some Christians support ending suffering?": "They believe there is a duty to remove suffering.",
+		"What is meant by the lesser of two evils?": "Choosing the least harmful option.",
+		"What principle guides Situation Ethics?": "Do the most loving thing.",
+		"Why does having a soul make humans special?": "It gives human life unique value.",
+		"What does sanctity of life teach about human worth?": "Every human life is sacred.",
+		"Why do some Christians prioritise quality of life?": "Life should have benefits and dignity.",
+		"How does being made in God's image affect Christian beliefs?": "It makes human life sacred and valuable."
+	}
+}
 var http_request: HTTPRequest
 var baseurl := "https://horizons.hackclub.com/api/projects/"
 var projectID := str(randi_range(0, 9000))
